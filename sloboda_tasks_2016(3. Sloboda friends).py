@@ -1,5 +1,5 @@
 N = int(input())#number of people in the company
-S = int(input()) - 1 # a specific number of person
+S = int(input())# a specific number of person
 Matrix= [] # create an empty matrix
 Result = 0 # number of friends and friends of friends
 Friends = [] # array of friends and friends of friends
