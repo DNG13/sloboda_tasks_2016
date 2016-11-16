@@ -1,4 +1,4 @@
-N = int(input())#number of people in the company
+N = int(input())# number of people in the company
 S = int(input())# a specific number of person
 Matrix= [] # create an empty matrix
 Result = 0 # number of friends and friends of friends
@@ -11,14 +11,16 @@ for i in range(N):
 # to add friends
 for j in range(N):
     if Matrix[S][j]== 1:
-        Friends.append(j)
+        # don't add already added friends
+        if Friends.count(j) < 1:
+            Friends.append(j)
         i = j
         # to add friends of friends
         for x in range(N):
             #don't add person with a specific number again
             if Matrix[i][x]== 1 and x != S:
-                # don't add already added friends and friends of friends
-                if Friends.count(x) !=1:
+                # don't add already added friends of friends
+                if Friends.count(x) < 1:
                     Friends.append(x)
 Result = len(Friends)# to count friends and friends of friends
 print('Result:', Result)
